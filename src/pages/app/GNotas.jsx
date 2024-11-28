@@ -158,7 +158,7 @@ const GNotas = () => {
   }
 
   return (
-    <div className="w-full mx-auto p-8 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500 min-h-screen">
+    <div className="w-full mx-auto p-4 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500 min-h-screen">
       <h1 className="text-4xl font-extrabold text-white text-center mb-8 shadow-lg p-4 rounded">
         {teacherdata.nombre}
       </h1>
@@ -176,7 +176,7 @@ const GNotas = () => {
       </button>
 
       {/* Selects */}
-      <div className="flex justify-center space-x-6 mb-6">
+      <div className="w-full flex justify-center space-x-6 mb-6">
         <select
           className="border p-3 rounded shadow focus:outline-none focus:ring-2 focus:ring-purple-500"
           value={materia}
@@ -197,7 +197,7 @@ const GNotas = () => {
       </div>
 
       {/* Tabla de estudiantes */}
-      <table className="min-w-full table-auto border-collapse rounded-lg overflow-hidden shadow-lg">
+      <table className="min-w-full table-auto border-collapse rounded-lg overflow-hidden shadow-lg lg:">
         <thead className="bg-purple-600 text-white">
           <tr>
             <th className="border px-4 py-2">#</th>
@@ -271,7 +271,7 @@ const GNotas = () => {
       {/* Modal para seleccionar valor */}
       {modalCasilla && (
         <div className="fixed z-20 inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">
-          <div className="bg-white p-4 rounded shadow-lg w-1/3">
+          <div className="bg-white p-4 rounded shadow-lg w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
             <h2 className="text-xl font-bold mb-4">Seleccionar Valor</h2>
             <div className="grid grid-cols-2 gap-4">
               <button

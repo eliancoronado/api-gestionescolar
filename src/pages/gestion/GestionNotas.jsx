@@ -268,7 +268,7 @@ const GestionNotas = () => {
       {/* Modal para seleccionar valor */}
       {modalCasilla && (
         <div className="fixed z-20 inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">
-          <div className="bg-white p-4 rounded shadow-lg w-1/3">
+          <div className="bg-white p-4 rounded shadow-lg w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
             <h2 className="text-xl font-bold mb-4">Seleccionar Valor</h2>
             <div className="grid grid-cols-2 gap-4">
               <button
