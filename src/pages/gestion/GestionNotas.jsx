@@ -17,7 +17,9 @@ const GestionNotas = () => {
   useEffect(() => {
     const fetchMaterias = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/materias");
+        const response = await axios.get(
+          "https://api-gestionescolar-backend.onrender.com/materias"
+        );
         setMaterias(response.data);
       } catch (error) {
         console.error("Error al obtener materias:", error);
@@ -51,7 +53,7 @@ const GestionNotas = () => {
       const fetchEstudiantes = async () => {
         try {
           const response = await axios.get(
-            `http://localhost:3000/estudiantes/${grado}`
+            `https://api-gestionescolar-backend.onrender.com/estudiantes/${grado}`
           );
           setEstudiantes(response.data);
         } catch (error) {
@@ -117,7 +119,7 @@ const GestionNotas = () => {
   const handleGuardarNotas = async () => {
     try {
       const response = await axios.put(
-        `http://localhost:3000/estudiantes/${selectedStudent._id}/notas`,
+        `https://api-gestionescolar-backend.onrender.com/estudiantes/${selectedStudent._id}/notas`,
         {
           materia,
           notas,

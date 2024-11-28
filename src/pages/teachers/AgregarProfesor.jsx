@@ -32,7 +32,9 @@ const AgregarProfesor = () => {
   useEffect(() => {
     const fetchMaterias = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/materias");
+        const response = await axios.get(
+          "https://api-gestionescolar-backend.onrender.com/materias"
+        );
         setMaterias(response.data);
       } catch (error) {
         console.error("Error al obtener materias:", error);
@@ -44,7 +46,9 @@ const AgregarProfesor = () => {
   useEffect(() => {
     const fetchProfesores = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/profesores");
+        const response = await axios.get(
+          "https://api-gestionescolar-backend.onrender.com/profesores"
+        );
         setProfesores(response.data);
         console.log(response.data);
       } catch (error) {
@@ -57,11 +61,14 @@ const AgregarProfesor = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3000/profesores", {
-        nombre,
-        materia,
-        grado,
-      });
+      const response = await axios.post(
+        "https://api-gestionescolar-backend.onrender.com/profesores",
+        {
+          nombre,
+          materia,
+          grado,
+        }
+      );
       console.log(...profesores, response);
       setProfesores([...profesores, response.data.profesor]);
       alert(
@@ -78,7 +85,9 @@ const AgregarProfesor = () => {
   const handleEliminar = async (id) => {
     if (window.confirm("¿Estás seguro de eliminar este profesor?")) {
       try {
-        await axios.delete(`http://localhost:3000/profesores/${id}`);
+        await axios.delete(
+          `https://api-gestionescolar-backend.onrender.com/profesores/${id}`
+        );
         setProfesores(profesores.filter((profesor) => profesor._id !== id));
         alert("Profesor eliminado correctamente");
       } catch (error) {

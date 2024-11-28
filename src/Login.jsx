@@ -13,10 +13,13 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post("http://localhost:3000/auth/login", {
-        usuario,
-        contraseña,
-      });
+      const response = await axios.post(
+        "https://api-gestionescolar-backend.onrender.com/auth/login",
+        {
+          usuario,
+          contraseña,
+        }
+      );
       localStorage.setItem("token", response.data.token);
       localStorage.setItem("id", response.data.profesor.id);
       navigate("/app-teacher");

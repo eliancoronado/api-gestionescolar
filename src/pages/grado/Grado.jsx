@@ -14,7 +14,7 @@ const Grado = () => {
     try {
       setLoading(true);
       const response = await axios.get(
-        `http://localhost:3000/estudiantes/${gradoseleccionado}`
+        `https://api-gestionescolar-backend.onrender.com/estudiantes/${gradoseleccionado}`
       );
       setEstudiantes(response.data);
     } catch (error) {
@@ -29,7 +29,9 @@ const Grado = () => {
       window.confirm("¿Estás seguro de que deseas eliminar este estudiante?")
     ) {
       try {
-        await axios.delete(`http://localhost:3000/estudiantes/${id}`);
+        await axios.delete(
+          `https://api-gestionescolar-backend.onrender.com/estudiantes/${id}`
+        );
         // Actualizar la lista de estudiantes después de eliminar
         setEstudiantes(
           estudiantes.filter((estudiante) => estudiante._id !== id)

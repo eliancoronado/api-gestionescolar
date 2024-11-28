@@ -41,7 +41,9 @@ const Dashboard = () => {
   useEffect(() => {
     const totalEstudiantes = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/allstudents`);
+        const response = await axios.get(
+          `https://api-gestionescolar-backend.onrender.com/allstudents`
+        );
         setAllstudents(response.data);
         console.log(response.data);
       } catch (error) {
@@ -55,7 +57,7 @@ const Dashboard = () => {
     const totalMaterias = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/materias/allmaterias`
+          `https://api-gestionescolar-backend.onrender.com/materias/allmaterias`
         );
         setAllmaterias(response.data);
         console.log(response.data);
@@ -70,7 +72,7 @@ const Dashboard = () => {
     const totalDocentes = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/profesores/all`
+          `https://api-gestionescolar-backend.onrender.com/profesores/all`
         );
         setAllteachers(response.data);
         console.log(response.data);

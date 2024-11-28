@@ -15,13 +15,16 @@ const Register = () => {
 
     // Llamada a tu API para registrar el profesor
     try {
-      const response = await fetch("http://localhost:3000/profesores", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ nombre, materia, grado }),
-      });
+      const response = await fetch(
+        "https://api-gestionescolar-backend.onrender.com/profesores",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ nombre, materia, grado }),
+        }
+      );
       const data = await response.json();
       if (response.status === 201) {
         alert("Profesor registrado exitosamente");

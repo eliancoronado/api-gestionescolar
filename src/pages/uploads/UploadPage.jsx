@@ -25,9 +25,13 @@ function FileUpload() {
 
     try {
       setLoading(true);
-      await axios.post("http://localhost:3000/upload", formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
+      await axios.post(
+        "https://api-gestionescolar-backend.onrender.com/upload",
+        formData,
+        {
+          headers: { "Content-Type": "multipart/form-data" },
+        }
+      );
       alert("Archivo subido exitosamente");
     } catch (error) {
       console.error("Error al subir archivo:", error);

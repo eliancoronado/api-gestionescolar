@@ -23,7 +23,7 @@ const GNotas = () => {
       const fetchEstudiantes = async () => {
         try {
           const response = await axios.get(
-            `http://localhost:3000/estudiantes/${grado}`
+            `https://api-gestionescolar-backend.onrender.com/estudiantes/${grado}`
           );
           setEstudiantes(response.data);
         } catch (error) {
@@ -54,7 +54,7 @@ const GNotas = () => {
     const alldata = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/profesores/${idteacher}/alldata`
+          `https://api-gestionescolar-backend.onrender.com/profesores/${idteacher}/alldata`
         );
         setTeacherdata(response.data);
         console.log(response.data);
@@ -122,7 +122,7 @@ const GNotas = () => {
   const handleGuardarNotas = async () => {
     try {
       const response = await axios.put(
-        `http://localhost:3000/estudiantes/${selectedStudent._id}/notas`,
+        `https://api-gestionescolar-backend.onrender.com/estudiantes/${selectedStudent._id}/notas`,
         {
           materia,
           notas,

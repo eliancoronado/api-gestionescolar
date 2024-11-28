@@ -10,7 +10,9 @@ function Materias() {
   // Función para obtener las materias desde el backend
   const fetchMaterias = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/materias");
+      const response = await axios.get(
+        "https://api-gestionescolar-backend.onrender.com/materias"
+      );
       setMaterias(response.data); // Guardamos las materias en el estado
     } catch (error) {
       console.error("Error al obtener las materias:", error);
@@ -35,7 +37,10 @@ function Materias() {
     }
 
     try {
-      await axios.post("http://localhost:3000/materias", { nombre: materia });
+      await axios.post(
+        "https://api-gestionescolar-backend.onrender.com/materias",
+        { nombre: materia }
+      );
       setMateria(""); // Limpiar el input
       alert("Materia agregada exitosamente");
       fetchMaterias(); // Actualizar la lista de materias
@@ -49,7 +54,9 @@ function Materias() {
   const handleEliminar = async (id) => {
     if (window.confirm("¿Estás seguro de que deseas eliminar esta materia?")) {
       try {
-        await axios.delete(`http://localhost:3000/materias/${id}`);
+        await axios.delete(
+          `https://api-gestionescolar-backend.onrender.com/materias/${id}`
+        );
         // Filtramos las materias eliminadas
         setMaterias(materias.filter((materia) => materia._id !== id));
         alert("Materia eliminada exitosamente.");
